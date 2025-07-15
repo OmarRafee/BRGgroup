@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+/* Full-page container */
+.construction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensure content stays above background */
+}
+
+/* Animated Background */
+.construction-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, #1e1e1e 70%);
+  animation: pulseBackground 6s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes pulseBackground {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Crane Animation with 3D Effect */
+.crane {
+  width: 120px;
+  height: 150px;
+  position: relative;
+  margin-bottom: 30px;
+  perspective: 1000px; /* Add 3D perspective */
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.crane-arm {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, gold, #ff8c00);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform-origin: center;
+  transform: rotateY(20deg); /* Initial 3D tilt */
+  animation: spin3D 3s infinite linear;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.crane-hook {
+  width: 6px;
+  height: 40px;
+  background-color: #ffffff;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  animation: swingHook 1.5s infinite ease-in-out;
+}
+
+@keyframes spin3D {
+  0% {
+    transform: rotateY(20deg) rotateX(0deg);
+  }
+  50% {
+    transform: rotateY(-20deg) rotateX(10deg);
+  }
+  100% {
+    transform: rotateY(20deg) rotateX(0deg);
+  }
+}
+
+@keyframes swingHook {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-12px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Construction message with pulsating effect */
+.construction-text {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(90deg, gold, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: pulseText 2s infinite ease-in-out;
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Loading bar with glow */
+.loading-bar {
+  width: 80%;
+  max-width: 450px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  margin: 25px 0;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.loading-progress {
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, gold, #ff8c00);
+  border-radius: 6px;
+  position: absolute;
+  animation: loadingGlow 2.5s infinite linear;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+@keyframes loadingGlow {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Team message with subtle fade */
+.team-message {
+  font-size: 18px;
+  color: #cccccc;
+  margin-top: 15px;
+  max-width: 600px;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .construction-text {
+    font-size: 28px;
+  }
+
+  .crane {
+    width: 100px;
+    height: 120px;
+  }
+
+  .loading-bar {
+    max-width: 350px;
+  }
+
+  .team-message {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .construction-text {
+    font-size: 24px;
+  }
+
+  .crane {
+    width: 80px;
+    height: 100px;
+  }
+
+  .loading-bar {
+    max-width: 250px;
+  }
+
+  .team-message {
+    font-size: 14px;
+  }
+}

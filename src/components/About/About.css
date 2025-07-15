@@ -1,0 +1,336 @@
+/* Arabic Text Adjustments */
+body.arabic .about-text,
+body.arabic .section-text,
+body.arabic .section-number,
+body.arabic .expanded-content .section-text {
+  text-align: right; /* Align text to the right */
+  font-size: 20px;
+}
+/* Arabic Title Color Adjustments */
+body.arabic .section-number,
+body.arabic .section-title {
+  background: none; /* Remove background image */
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #f7cd5a; /* Change text color to white */
+  color: #f7cd5a; /* Ensure text appears correctly */
+}
+
+body.arabic .about-title,
+body.arabic .section-title {
+  text-align: right; /* Align titles to the right */
+}
+
+body.arabic .about-sections {
+  flex-direction: row-reverse; /* Reverse section order in Arabic */
+}
+
+/* Unchanged Desktop Styles */
+.about-container {
+  background: url("../../assets/background2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  padding: 60px 80px;
+  text-align: left;
+  font-family: "Arial", sans-serif;
+}
+
+.about-title {
+  background: url("../../assets/gold-texture.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  margin-bottom: 25px;
+  font-weight: lighter;
+  margin-top: -20px;
+}
+
+.about-text {
+  font-size: 15px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 1500px;
+  font-weight: lighter;
+  text-align: justify;
+}
+
+.about-text.bold {
+  font-weight: bold;
+}
+
+.about-sections {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.about-section {
+  width: 40%;
+}
+
+.section-number {
+  background: url("../../assets/gold-texture.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: -5px;
+}
+
+.section-title {
+  background: url("../../assets/gold-texture.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: -5px;
+}
+
+.section-text {
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: lighter;
+  text-align: justify;
+}
+
+.section-link {
+  background: url("../../assets/gold-texture.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  cursor: pointer;
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+.readmoremargin {
+  margin-top: 30px;
+}
+/* Enhanced Mobile View */
+@media (max-width: 768px) {
+  /* Prevent horizontal scrolling */
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-container {
+    padding: 40px 20px; /* Padding left and right */
+    text-align: center;
+    background: url("../../assets/background2.jpg") no-repeat center center
+      fixed;
+    background-size: cover;
+    width: 100vw; /* Full viewport width */
+    max-width: 100%; /* Prevent overflow */
+    overflow-x: hidden; /* No horizontal scroll */
+    box-sizing: border-box; /* Include padding in width */
+  }
+
+  .about-title {
+    font-size: 32px;
+    margin: 0 auto 25px; /* Centered with spacing */
+    padding: 0 10px; /* Inner padding */
+    max-width: 90%; /* Prevent overflow */
+    background: url("../../assets/gold-texture.jpg");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: lighter;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 auto 20px;
+    text-align: center;
+    max-width: 90%; /* Prevent text overflow */
+    font-weight: lighter;
+    padding: 0 10px; /* Inner padding */
+  }
+
+  .about-text.bold {
+    font-weight: 600; /* Slightly bolder for emphasis */
+  }
+
+  .about-sections {
+    flex-direction: column;
+    margin: 0;
+    gap: 30px; /* Professional spacing between sections */
+    width: 100%;
+    align-items: center;
+  }
+
+  .about-section {
+    width: 100%;
+    max-width: 600px; /* Limit width for readability */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Slightly lighter backdrop */
+    border-radius: 12px; /* Smoother corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    box-sizing: border-box;
+  }
+
+  .section-number {
+    font-size: 1.8rem; /* Slightly larger for impact */
+    margin: 0 auto 5px;
+    background: url("../../assets/gold-texture.jpg");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin: 10px auto;
+    background: url("../../assets/gold-texture.jpg");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+
+  .section-text {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 25px 15px;
+    max-width: 90%; /* Prevent overflow */
+    font-weight: lighter;
+    padding: 0 10px; /* Consistent padding with about-text */
+    color: white; /* Match default text color */
+    text-align: justify;
+  }
+
+  .expanded-content {
+    margin: 0 auto 15px; /* Match section-text margin */
+    max-width: 90%; /* Match section-text max-width */
+    text-align: justify;
+  }
+
+  .expanded-content .section-text {
+    font-size: 14px; /* Match original section-text */
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto 15px; /* Match original section-text */
+    max-width: 90%;
+    font-weight: lighter;
+    padding: 0 10px; /* Match original section-text padding */
+    color: white; /* Match original section-text color */
+    text-align: justify;
+  }
+
+  .section-link {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+    background: url("../../assets/gold-texture.jpg");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0; /* Centered with consistent spacing */
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .section-link:hover {
+    transform: scale(1.05);
+    text-shadow: 0 2px 6px rgba(212, 175, 55, 0.6); /* Gold glow on hover */
+  }
+
+  .readmoremargin {
+    margin-top: 20px; /* Consistent alignment with Mission */
+  }
+
+  body.arabic .about-text,
+  body.arabic .section-text,
+  body.arabic .section-number,
+  body.arabic .expanded-content .section-text {
+    text-align: center; /* Match English */
+    font-size: 14px; /* Keep consistent */
+  }
+
+  body.arabic .section-title {
+    text-align: center; /* Match English */
+  }
+
+  body.arabic .about-sections {
+    flex-direction: column; /* Keep same layout as English */
+  }
+
+  body.arabic .section-text,
+  body.arabic .expanded-content .section-text {
+    text-align: justify;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 30px 15px; /* Slightly smaller padding */
+  }
+
+  .about-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .about-section {
+    padding: 15px;
+  }
+
+  .section-number {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .section-text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .expanded-content .section-text {
+    font-size: 13px; /* Match original section-text */
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .section-link {
+    font-size: 1rem;
+    padding: 5px 12px;
+  }
+  body.arabic .about-text {
+    font-size: 13px;
+  }
+
+  body.arabic .section-text {
+    font-size: 13px;
+  }
+
+  body.arabic .section-number {
+    font-size: 1.6rem;
+  }
+
+  body.arabic .section-title {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,358 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 14000px;
+  margin: 0 auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, padding 0.3s;
+}
+/* Arabic Language Adjustments */
+body.arabic .logo {
+  margin-left: auto;
+  margin-right: 90px; /* Move logo to the left */
+}
+
+body.arabic .nav-links {
+  justify-content: flex-start; /* Align navigation links to the left */
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  margin-left: 80px;
+  margin-top: 15px;
+}
+
+.logo img {
+  height: 80px;
+  width: 115px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300; /* 'light' replaced with numeric value */
+  font-size: 20px;
+}
+
+.left-links {
+  margin-right: auto;
+  margin-left: 180px;
+}
+
+.right-links {
+  margin-left: auto;
+  margin-right: 300px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 20px; /* Consistent with nav-links */
+  transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  color: gold;
+  transform: scale(1.1);
+}
+/* Previous styles remain unchanged until the Language Switch section */
+
+/* Enhanced Language Switch Styling */
+.lang-switch-container {
+  position: absolute;
+  top: 50%;
+  right: 200px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.lang-switch-input {
+  display: none;
+}
+
+.lang-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80px; /* Slightly wider for oval shape */
+  height: 36px; /* Adjusted height */
+  background: #333;
+  border-radius: 36px; /* Full height for oval shape */
+  position: relative;
+  cursor: pointer;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.6s ease-in-out, transform 0.3s ease; /* Slower background transition */
+}
+
+.lang-switch-label:hover {
+  transform: scale(1.05);
+}
+
+.lang-switch-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 28px; /* Slightly larger oval indicator */
+  height: 28px;
+  background: white;
+  border-radius: 50%; /* Circular slider within oval switch */
+  transition: transform 0.8s ease-in-out; /* Slower, smoother transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-indicator {
+  width: 10px; /* Slightly larger indicator */
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  transition: background 0.6s ease-in-out; /* Slower color transition */
+}
+
+.lang-switch-text {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  width: 50%;
+  text-align: center;
+  transition: color 0.6s ease-in-out; /* Slower text color transition */
+}
+
+.en-text {
+  margin-left: 8px;
+}
+
+.ar-text {
+  margin-right: 8px;
+}
+
+.lang-switch-input:checked + .lang-switch-label {
+  background: linear-gradient(45deg, #d4af37, #f0c14b);
+}
+
+.lang-switch-input:checked + .lang-switch-label .lang-switch-slider {
+  transform: translateX(44px); /* Adjusted for wider switch */
+}
+
+.lang-switch-input:checked + .lang-switch-label .slider-indicator {
+  background: gold;
+}
+
+.lang-switch-input:checked + .lang-switch-label .ar-text {
+  color: #333;
+}
+
+.lang-switch-input:not(:checked) + .lang-switch-label .en-text {
+  color: #333;
+}
+
+/* Mobile View Enhancements */
+@media (max-width: 768px) {
+  .lang-switch-container {
+    right: 20px;
+  }
+  .navbar {
+    padding: 15px 20px; /* Professional padding */
+    background: linear-gradient(
+      180deg,
+      #000000 0%,
+      #1a1a1a 100%
+    ); /* Sleek gradient */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px; /* Increased height to fit stacked links */
+    position: fixed;
+    top: 0;
+    width: 100vw; /* Full viewport width */
+    max-width: 100%; /* Prevent overflow */
+    z-index: 1000;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+  }
+
+  .navbar.scrolled {
+    background: rgba(0, 0, 0, 0.9); /* More opaque for visibility */
+    backdrop-filter: blur(8px);
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Exact center */
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo img {
+    height: 60px; /* Consistent with previous tweak */
+    width: 85px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo img:hover {
+    transform: scale(1.05); /* Subtle hover effect */
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 10px; /* Tightened gap for mobile */
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    flex: 1; /* Equal space distribution */
+    justify-content: space-between; /* Spread links evenly */
+    width: 100%; /* Full width for alignment */
+    align-items: center; /* Vertically center links */
+  }
+
+  .left-links,
+  .right-links {
+    margin: 0;
+    padding: 0 10px; /* Offset logo overlap */
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 8px; /* Spacing between stacked links */
+    justify-content: center; /* Vertically center within section */
+    align-items: flex-start; /* Left-align left-links */
+    text-align: left; /* Ensure text justification */
+  }
+
+  .right-links {
+    align-items: flex-end; /* Right-align right-links */
+    text-align: right;
+  }
+
+  .nav-links li {
+    display: none; /* Stack vertically */
+    width: 100%; /* Full width for alignment */
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 8px; /* Adjusted padding for stacked layout */
+    transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+    display: block; /* Full width for justification */
+    white-space: normal; /* Allow wrapping for two-word links */
+    line-height: 1.2; /* Tight line height for stacking */
+  }
+
+  .nav-links a:hover {
+    color: gold;
+    transform: scale(1.05); /* Smaller scale for stacked layout */
+    background: rgba(212, 175, 55, 0.1); /* Subtle gold background */
+  }
+  .lang-switch-container {
+    right: 100px; /* Move it slightly to the left */
+    top: 50%; /* Move it further down */
+    transform: translateY(-50%);
+  }
+
+  .lang-switch-label {
+    width: 55px; /* Make the switch much smaller */
+    height: 24px; /* Reduce height */
+    padding: 2px;
+  }
+
+  .lang-switch-slider {
+    width: 18px; /* Smaller slider */
+    height: 18px;
+    top: 3px;
+    left: 3px;
+    transform: translateX(0);
+  }
+
+  .lang-switch-input:checked + .lang-switch-label .lang-switch-slider {
+    transform: translateX(30px); /* Adjust based on new width */
+  }
+
+  .lang-switch-text {
+    font-size: 10px; /* Smaller font */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+    min-height: 70px; /* Adjusted for smaller screens */
+  }
+
+  .logo img {
+    height: 50px; /* Smaller for very small screens */
+    width: 70px;
+    padding-right: 20px;
+  }
+
+  .nav-links {
+    font-size: 12px;
+  }
+
+  .left-links,
+  .right-links {
+    gap: 6px; /* Tighter spacing */
+    padding: 0 30px;
+  }
+  .right-links {
+    padding-left: 120px;
+    text-align: start;
+  }
+  .nav-links a {
+    font-size: 12px;
+    padding: 3px 6px; /* Smaller padding */
+  }
+  .lang-switch-container {
+    right: 30px; /* Move it slightly more left */
+    top: 65%; /* Move it further down */
+    transform: translateY(-50%);
+  }
+
+  .lang-switch-label {
+    width: 50px; /* Smaller width */
+    height: 22px; /* Smaller height */
+  }
+
+  .lang-switch-slider {
+    width: 16px; /* Adjust slider size */
+    height: 16px;
+  }
+
+  .lang-switch-input:checked + .lang-switch-label .lang-switch-slider {
+    transform: translateX(28px); /* Adjust based on new width */
+  }
+
+  .lang-switch-text {
+    font-size: 9px; /* Smaller text */
+  }
+}

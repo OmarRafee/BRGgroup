@@ -1,0 +1,88 @@
+/* Footer.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+/* Arabic Footer Text Alignment */
+body.arabic .footer-text,
+body.arabic .footer-title,
+body.arabic .footer-contact {
+  text-align: right; /* Align text to the right */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 30px 200px;
+  font-family: "Inter", Arial, sans-serif;
+  border-top: 1px solid rgba(255, 215, 0, 0.5); /* Gold border line */
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-logo {
+  width: 120px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  line-height: 1.3;
+  max-width: 350px;
+  opacity: 0.8;
+}
+
+.footer-right {
+  text-align: left;
+}
+
+.footer-title {
+  color: gray;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-contact {
+  font-size: 1rem;
+  margin: 5px 0;
+  opacity: 0.8;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-icons img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.footer-icons img:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer-right {
+    text-align: center;
+    margin-top: 20px;
+  }
+  /* Arabic Footer Text Alignment */
+  body.arabic .footer-text,
+  body.arabic .footer-title,
+  body.arabic .footer-contact {
+    text-align: center; /* Align text to the right */
+  }
+}
